@@ -1,26 +1,20 @@
+#include "point.h"
 #include "fraction.h"
+#include "student.h"
 using namespace std;
 
 int main() {
-    Fraction frac1, frac2;
+    Point p1(1, 2, 3);
+    p1.display();
 
-    cout << "Enter first fraction:" << endl;
-    frac1.input();
+    Fraction f1(3, 4);
+    Fraction f2(2, 5);
+    Fraction result = f1.add(f2);
+    cout << "Fraction result: ";
+    result.display();
 
-    cout << "Enter second fraction:" << endl;
-    frac2.input();
-
-    cout << "Addition: ";
-    frac1.add(frac2).display();
-
-    cout << "Subtraction: ";
-    frac1.subtract(frac2).display();
-
-    cout << "Multiplication: ";
-    frac1.multiply(frac2).display();
-
-    cout << "Division: ";
-    frac1.divide(frac2).display();
+    Student John("John Doe", 1998, "+380686969696", "Kyiv", "Ukraine", "NUFT", "Kyiv", "Ukraine", 42);
+    John.display();
 
     return 0;
 }

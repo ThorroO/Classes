@@ -129,9 +129,13 @@
   <ItemGroup>
     <ClCompile Include="fraction.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="point.cpp" />
+    <ClCompile Include="student.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fraction.h" />
+    <ClInclude Include="point.h" />
+    <ClInclude Include="student.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
