@@ -1,20 +1,24 @@
-#include "point.h"
-#include "fraction.h"
-#include "student.h"
+#include <iostream>
+#include "Geometry.h"
+#include "Point.h"
+#include "Fraction.h"
+#include "Student.h"
+
 using namespace std;
 
 int main() {
-    Point p1(1, 2, 3);
-    p1.display();
+    cout << "Rectangle area: " << Geometry::RectangleArea(5, 10) << endl;
+    cout << "Square area: " << Geometry::SquareArea(4) << endl;
+    cout << "Total area calculations: " << Geometry::GetCount() << endl;
+
+    Point p1(1.0, 2.0, 3.0);
+    cout << "Total points created: " << Point::GetInstanceCount() << endl;
 
     Fraction f1(3, 4);
-    Fraction f2(2, 5);
-    Fraction result = f1.add(f2);
-    cout << "Fraction result: ";
-    result.display();
+    cout << "Total fractions created: " << Fraction::GetInstanceCount() << endl;
 
-    Student John("John Doe", 1998, "+380686969696", "Kyiv", "Ukraine", "NUFT", "Kyiv", "Ukraine", 42);
-    John.display();
+    Student s1("John Doe");
+    cout << "Total students created: " << Student::GetInstanceCount() << endl;
 
     return 0;
 }

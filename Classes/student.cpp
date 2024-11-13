@@ -1,8 +1,19 @@
-#include "student.h"
+#include "Student.h"
+#include <cstring>
 
-void Student::display() const {
-    cout << "Name: " << name << "\nBirth Year: " << birthYear << "\nPhone: " << phone
-        << "\nCity: " << city << "\nCountry: " << country
-        << "\nSchool: " << schoolName << "\nSchool City: " << schoolCity
-        << "\nSchool Country: " << schoolCountry << "\nGroup Number: " << groupNumber << endl;
+int Student::instanceCount = 0;
+
+Student::Student(const char* name) {
+    this->name = new char[strlen(name) + 1];
+    strcpy_s(this->name, strlen(name) + 1, name);
+    instanceCount++;
+}
+
+Student::~Student() {
+    delete[] name;
+    instanceCount--;
+}
+
+int Student::GetInstanceCount() {
+    return instanceCount;
 }
